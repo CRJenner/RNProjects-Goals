@@ -29,8 +29,11 @@ setMyListOfGoals(currentGoals => [
   onPress={addGoalHandler}/>
 </View>
 <View style={styles.goalsContainer}>
-{myListOfGoals.map((goal) => <Text key={goal}>{goal}</Text>)}
-  <Text>List of goals...</Text>
+{myListOfGoals.map((goal) => (
+<View style= {styles.goalItem} key={goal}>
+  <Text style= {styles.goalText}>{goal}</Text>
+</View>))}
+
 </View>
     </View>
   );
@@ -61,5 +64,15 @@ const styles = StyleSheet.create({
   goalsContainer:{
     flex: 4,
     paddingTop: 25
+  },
+  goalItem:{
+margin:8,
+padding: 8,
+borderRadius:6,
+backgroundColor: 'purple',
+color: 'white'
+  },
+  goalText:{
+    color: 'white'
   }
 });
